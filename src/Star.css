@@ -5,6 +5,7 @@
 
 .Star__image {
 	padding: 8px 6px;
+	cursor: pointer;
 }
 
 .Star__text {
