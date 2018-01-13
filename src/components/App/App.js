@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import Popup from '../Popup';
-import {closePopupAction, setRatingAction, fetchDataAction} from '../../actions';
+import {openPopupAction, closePopupAction, setRatingAction, fetchDataAction} from '../../actions';
 
 /**
  * App component. Main & only redux container component of this mini app.
@@ -16,7 +16,7 @@ class App extends Component {
 	}
 
 	render() {
-		const {rating, isClosed, isFetchingData, closePopupAction, setRatingAction} = this.props;
+		const {rating, isClosed, isFetchingData, openPopupAction, closePopupAction, setRatingAction} = this.props;
 
 		// Initial appContainer
 		let appContainer = '';
@@ -25,11 +25,13 @@ class App extends Component {
 		if (isFetchingData === true) {
 			appContainer = 'Loading data...'
 		} else if (isClosed === true) {
-			appContainer = 'Popup closed';
+			appContainer = <div>
+				Popup closed! <span className="App__open-popup" onClick={openPopupAction}>Click here</span> to open.
+			</div>;
 		} else if (isClosed === false) {
 			appContainer = <Popup rating={rating}
-										onClose={closePopupAction}
-										onStarClick={setRatingAction}/>;
+														onClose={closePopupAction}
+														onStarClick={setRatingAction}/>;
 		} else if (isClosed === null && rating === null) {
 			appContainer = 'Couldn\'t load data from the server';
 		}
@@ -49,4 +51,4 @@ class App extends Component {
 
 const mapStateToProps = ({rating, isClosed, isFetchingData}) => ({rating, isClosed, isFetchingData});
 
-export default connect(mapStateToProps, {closePopupAction, setRatingAction, fetchDataAction})(App);
+export default connect(mapStateToProps, {openPopupAction, closePopupAction, setRatingAction, fetchDataAction})(App);

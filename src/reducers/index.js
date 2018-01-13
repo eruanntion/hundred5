@@ -30,6 +30,8 @@ const isClosed = (state = null, action) => {
 			return action.payload.closed;
 		case 'FETCH_CLOSED_FAILURE':
 			return null;
+		case 'OPEN_POPUP':
+			return false;
 		case 'CLOSE_POPUP':
 			return true;
 		default:

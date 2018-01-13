@@ -10,3 +10,8 @@
   height: 150px;
   padding: 20px;
 }
+
+.App__open-popup {
+	cursor: pointer;
+	color: #00c7ba;
+}

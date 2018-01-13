@@ -14,6 +14,12 @@ export const setRatingAction = (rating) => ({type: 'SET_RATING', rating});
 export const closePopupAction = () => ({type: 'CLOSE_POPUP'});
 
 /**
+ * Open popup action creator
+ * @returns {{type: string}}
+ */
+export const openPopupAction = () => ({type: 'OPEN_POPUP'});
+
+/**
  * Fetch popup status (closed or not)
  * GET /feedback/closed
  * @returns {function(*): Promise<T>}
@@ -24,7 +30,7 @@ export const fetchClosedAction = () => (dispatch) => axios
 	.catch(err => dispatch({type: 'FETCH_CLOSED_FAILURE', err}));
 
 /**
- * Fetch rating
+ * Fetch rating action creator
  * GET /feedback/rating
  * @returns {function(*): Promise<T>}
  */
