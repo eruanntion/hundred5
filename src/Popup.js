@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import Star from './Star';
 import './Popup.css';
 import cross from './cross.svg';
+import _times from 'lodash/times';
 
 class Popup extends Component {
 	render() {
@@ -13,7 +15,11 @@ class Popup extends Component {
 					<img className="Popup__close" src={cross}/>
 				</div>
 				<div className="Popup__body">
-
+					{
+						_times(11, (n) => (
+							<Star number={n} active={false}/>
+						))
+					}
 				</div>
 			</div>
 		);

@@ -28,4 +28,7 @@
 .Popup__body {
 	height: 120px;
 	background-color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
