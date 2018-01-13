@@ -20,9 +20,14 @@ class Popup extends Component {
 		this.setState({suggestedRating: this.props.rating});
 	};
 
+	onStarClick = (starNumber) => {
+		this.props.onStarClick(starNumber)
+	};
+
 	render() {
-		const {onMouseEnter, onMouseLeave} = this;
+		const {onMouseEnter, onMouseLeave, onStarClick} = this;
 		const {suggestedRating} = this.state;
+		const {onClose} = this.props;
 
 		return (
 			<div className="Popup">
@@ -30,7 +35,7 @@ class Popup extends Component {
 					<div className="Popup__header-text">How likely are you to recommend <strong>Hundred5</strong> to a friend or
 						colleague?
 					</div>
-					<img className="Popup__close" src={cross} alt="close"/>
+					<img className="Popup__close" src={cross} alt="close" onClick={onClose}/>
 				</div>
 				<div className="Popup__body">
 					{
@@ -39,7 +44,8 @@ class Popup extends Component {
 										key={n}
 										isActive={suggestedRating != null && n <= suggestedRating}
 										onMouseEnter={onMouseEnter}
-										onMouseLeave={onMouseLeave}/>
+										onMouseLeave={onMouseLeave}
+										onClick={onStarClick}/>
 						))
 					}
 				</div>
