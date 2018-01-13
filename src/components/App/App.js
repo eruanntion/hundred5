@@ -54,6 +54,9 @@ class App extends Component {
 				<div className="App__container">
 					{appContainer}
 				</div>
+				<footer className="App__footer">
+					*You can provide Authorization token by supplying user in query string (for example user=John).
+					If not supplied, default, 'Ivan666', will be used</footer>
 			</div>
 		);
 	}

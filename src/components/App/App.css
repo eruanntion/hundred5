@@ -20,3 +20,11 @@
 	cursor: pointer;
 	color: #00c7ba;
 }
+
+.App__footer {
+	font-size: 10px;
+	text-align: left;
+	margin-top: 100px;
+	padding-left: 20px;
+	font-style: italic;
+}
