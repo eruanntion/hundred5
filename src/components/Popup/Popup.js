@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Star from './Star';
+import Star from '../Star';
 import './Popup.css';
 import cross from './cross.svg';
 import _times from 'lodash/times';
@@ -18,7 +18,6 @@ class Popup extends Component {
 
 	onMouseLeave = () => {
 		this.setState({suggestedRating: this.props.rating});
-		console.log('ovde');
 	};
 
 	render() {
