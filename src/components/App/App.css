@@ -11,6 +11,11 @@
   padding: 20px;
 }
 
+.App__submitted-rating {
+	display: flex;
+	flex-direction: column;
+}
+
 .App__open-popup {
 	cursor: pointer;
 	color: #00c7ba;

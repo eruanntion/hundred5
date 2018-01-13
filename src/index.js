@@ -8,6 +8,7 @@ import axios from 'axios';
 import './index.css';
 import App from './components/App';
 import reducer from './reducers';
+import {getQueryVariable} from './helpers';
 import registerServiceWorker from './registerServiceWorker';
 
 // Used to properly setup REDUX_DEVTOOLS
@@ -18,7 +19,7 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(thunkMiddlew
 
 // Set axios defaults for shorter syntax
 axios.defaults.baseURL = 'https://api-fknaanjgow.now.sh/feedback/';
-axios.defaults.headers.common['Authorization'] = 'Bearer Ivan';
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + (getQueryVariable('user') || 'Ivan666');
 
 ReactDOM.render(
 	<Provider store={store}>

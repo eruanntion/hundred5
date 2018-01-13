@@ -6,11 +6,11 @@ import axios from 'axios';
  * @returns {{type: string, rating: *}}
  */
 export const setRatingAction = (rating) => (dispatch) => {
-	dispatch({type: 'CLOSE_POPUP'});
+	dispatch({type: 'SET_RATING_REQUEST_START'});
 
 	return axios
 		.post('/rating', {rating})
-		.then(() => dispatch(({type: 'SET_RATING', payload: {rating}})))
+		.then(() => dispatch(({type: 'SET_RATING_REQUEST_SUCCESS', payload: {rating}})))
 		.catch(err => dispatch({type: 'SET_RATING_REQUEST_FAILURE', payload: err}));
 };
 

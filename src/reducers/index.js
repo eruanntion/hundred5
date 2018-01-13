@@ -9,7 +9,7 @@ import {combineReducers} from 'redux';
 const rating = (state = null, action) => {
 	switch (action.type) {
 		case 'FETCH_RATING_REQUEST_SUCCESS':
-		case 'SET_RATING':
+		case 'SET_RATING_REQUEST_SUCCESS':
 			return action.payload.rating;
 		case 'FETCH_RATING_REQUEST_FAILURE':
 			return null;
@@ -33,6 +33,7 @@ const isClosed = (state = null, action) => {
 		case 'OPEN_POPUP':
 			return false;
 		case 'CLOSE_POPUP':
+		case 'SET_RATING_REQUEST_START':
 			return true;
 		default:
 			return state;
@@ -40,7 +41,7 @@ const isClosed = (state = null, action) => {
 };
 
 /**
- * Ajax loading reducer
+ * Ajax data loading reducer
  * @param state
  * @param action
  * @returns {boolean}
@@ -56,4 +57,22 @@ const isFetchingData = (state = null, action) => {
 	}
 };
 
-export default combineReducers({rating, isClosed, isFetchingData});
+/**
+ * Ajax data submitting reducer
+ * @param state
+ * @param action
+ * @returns {*}
+ */
+const isSubmittingRating = (state = null, action) => {
+	switch (action.type) {
+		case 'SET_RATING_REQUEST_START':
+			return true;
+		case 'SET_RATING_REQUEST_SUCCESS':
+		case 'SET_RATING_REQUEST_FAILURE':
+			return false;
+		default:
+			return state;
+	}
+};
+
+export default combineReducers({rating, isClosed, isFetchingData, isSubmittingRating});
