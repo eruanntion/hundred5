@@ -2,10 +2,17 @@ import axios from 'axios';
 
 /**
  * Set rating action creator
- * @param payload
+ * @param rating
  * @returns {{type: string, rating: *}}
  */
-export const setRatingAction = (payload) => ({type: 'SET_RATING', payload});
+export const setRatingAction = (rating) => (dispatch) => {
+	dispatch({type: 'CLOSE_POPUP'});
+
+	return axios
+		.post('/rating', {rating})
+		.then(() => dispatch(({type: 'SET_RATING', payload: {rating}})))
+		.catch(err => dispatch({type: 'SET_RATING_REQUEST_FAILURE', payload: err}));
+};
 
 /**
  * Close popup action creator
