@@ -11,7 +11,7 @@ export const setRatingAction = (rating) => (dispatch) => {
 	return axios
 		.post('/rating', {rating})
 		.then(() => dispatch(({type: 'SET_RATING_REQUEST_SUCCESS', payload: {rating}})))
-		.catch(err => dispatch({type: 'SET_RATING_REQUEST_FAILURE', payload: err}));
+		.catch(() => dispatch({type: 'SET_RATING_REQUEST_FAILURE'}));
 };
 
 /**
@@ -23,7 +23,7 @@ export const closePopupAction = () => (dispatch) => {
 
 	return axios
 		.put('/closed', {closed: true})
-		.catch(err => dispatch({type: 'CLOSE_POPUP_REQUEST_FAILURE', payload: err}));
+		.catch(() => dispatch({type: 'CLOSE_POPUP_REQUEST_FAILURE'}));
 };
 
 /**
@@ -40,7 +40,7 @@ export const openPopupAction = () => ({type: 'OPEN_POPUP'});
 export const fetchClosedAction = () => (dispatch) => axios
 	.get('/closed')
 	.then(response => dispatch({type: 'FETCH_CLOSED_REQUEST_SUCCESS', payload: response.data}))
-	.catch(err => dispatch({type: 'FETCH_CLOSED_REQUEST_FAILURE', payload: err}));
+	.catch(() => dispatch({type: 'FETCH_CLOSED_REQUEST_FAILURE'}));
 
 /**
  * Fetch rating action creator
@@ -50,7 +50,7 @@ export const fetchClosedAction = () => (dispatch) => axios
 export const fetchRatingAction = () => (dispatch) => axios
 	.get('/rating')
 	.then(response => dispatch({type: 'FETCH_RATING_REQUEST_SUCCESS', payload: response.data}))
-	.catch(err => dispatch({type: 'FETCH_RATING_REQUEST_FAILURE', payload: err}));
+	.catch(() => dispatch({type: 'FETCH_RATING_REQUEST_FAILURE'}));
 
 /**
  * Fetch all data from API (rating & closed)
