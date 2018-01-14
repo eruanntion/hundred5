@@ -16,10 +16,9 @@ const setup = (props) => {
 };
 
 describe('Star component', () => {
-	it('should render self', () => {
+	it('should render properly', () => {
 		const {wrapper} = setup();
 
-		expect(wrapper.find('img').hasClass('Star__image')).toBe(true);
 		expect(wrapper.find('img').hasClass('Star__image')).toBe(true);
 		expect(wrapper.find('span').hasClass('Star__text')).toBe(true);
 	});
