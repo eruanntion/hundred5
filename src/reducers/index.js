@@ -6,7 +6,7 @@ import {combineReducers} from 'redux';
  * @param action
  * @returns {*}
  */
-const rating = (state = null, action) => {
+export const rating = (state = null, action) => {
 	switch (action.type) {
 		case 'FETCH_RATING_REQUEST_SUCCESS':
 		case 'SET_RATING_REQUEST_SUCCESS':
@@ -24,7 +24,7 @@ const rating = (state = null, action) => {
  * @param action
  * @returns {*}
  */
-const isClosed = (state = null, action) => {
+export const isClosed = (state = null, action) => {
 	switch (action.type) {
 		case 'FETCH_CLOSED_REQUEST_SUCCESS':
 			return action.payload.closed;
@@ -46,7 +46,7 @@ const isClosed = (state = null, action) => {
  * @param action
  * @returns {boolean}
  */
-const isFetchingData = (state = null, action) => {
+export const isFetchingData = (state = null, action) => {
 	switch (action.type) {
 		case 'FETCH_DATA_START':
 			return true;
@@ -63,7 +63,7 @@ const isFetchingData = (state = null, action) => {
  * @param action
  * @returns {*}
  */
-const isSubmittingRating = (state = null, action) => {
+export const isSubmittingRating = (state = null, action) => {
 	switch (action.type) {
 		case 'SET_RATING_REQUEST_START':
 			return true;
