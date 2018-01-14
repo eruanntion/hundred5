@@ -15,7 +15,7 @@ describe('reducers', () => {
 
 	describe('rating reducer', () => {
 		it('should return the initial state', () => {
-			expect(reducers.rating(undefined, {})).toEqual(null)
+			expect(reducers.rating(undefined, {})).toBe(null)
 		});
 
 		it('should handle FETCH_RATING_REQUEST_SUCCESS', () => {
@@ -24,7 +24,7 @@ describe('reducers', () => {
 				payload: {rating: 5}
 			};
 
-			expect(reducers.rating(undefined, action)).toEqual(action.payload.rating);
+			expect(reducers.rating(undefined, action)).toBe(action.payload.rating);
 		});
 
 		it('should handle SET_RATING_REQUEST_SUCCESS', () => {
@@ -33,7 +33,7 @@ describe('reducers', () => {
 				payload: {rating: 5}
 			};
 
-			expect(reducers.rating(undefined, action)).toEqual(action.payload.rating);
+			expect(reducers.rating(undefined, action)).toBe(action.payload.rating);
 		});
 
 		it('should handle FETCH_RATING_REQUEST_FAILURE', () => {
@@ -41,13 +41,13 @@ describe('reducers', () => {
 				type: 'FETCH_RATING_REQUEST_FAILURE'
 			};
 
-			expect(reducers.rating(undefined, action)).toEqual(null);
+			expect(reducers.rating(undefined, action)).toBe(null);
 		});
 	});
 
 	describe('isClosed reducer', () => {
 		it('should return the initial state', () => {
-			expect(reducers.isClosed(undefined, {})).toEqual(null)
+			expect(reducers.isClosed(undefined, {})).toBe(null)
 		});
 
 		it('should handle FETCH_CLOSED_REQUEST_SUCCESS', () => {
@@ -56,7 +56,7 @@ describe('reducers', () => {
 				payload: {closed: false}
 			};
 
-			expect(reducers.isClosed(undefined, action)).toEqual(false);
+			expect(reducers.isClosed(undefined, action)).toBe(false);
 		});
 
 		it('should handle FETCH_CLOSED_REQUEST_FAILURE', () => {
@@ -64,7 +64,7 @@ describe('reducers', () => {
 				type: 'FETCH_CLOSED_REQUEST_FAILURE',
 			};
 
-			expect(reducers.isClosed(undefined, action)).toEqual(null);
+			expect(reducers.isClosed(undefined, action)).toBe(null);
 		});
 
 		it('should handle OPEN_POPUP', () => {
@@ -72,7 +72,7 @@ describe('reducers', () => {
 				type: 'OPEN_POPUP',
 			};
 
-			expect(reducers.isClosed(undefined, action)).toEqual(false);
+			expect(reducers.isClosed(undefined, action)).toBe(false);
 		});
 
 		it('should handle CLOSE_POPUP', () => {
@@ -80,7 +80,7 @@ describe('reducers', () => {
 				type: 'CLOSE_POPUP',
 			};
 
-			expect(reducers.isClosed(undefined, action)).toEqual(true);
+			expect(reducers.isClosed(undefined, action)).toBe(true);
 		});
 
 		it('should handle SET_RATING_REQUEST_START', () => {
@@ -88,13 +88,13 @@ describe('reducers', () => {
 				type: 'SET_RATING_REQUEST_START',
 			};
 
-			expect(reducers.isClosed(undefined, action)).toEqual(true);
+			expect(reducers.isClosed(undefined, action)).toBe(true);
 		});
 	});
 
 	describe('isFetchingData reducer', () => {
 		it('should return the initial state', () => {
-			expect(reducers.isFetchingData(undefined, {})).toEqual(null)
+			expect(reducers.isFetchingData(undefined, {})).toBe(null)
 		});
 
 		it('should handle FETCH_DATA_START', () => {
@@ -102,7 +102,7 @@ describe('reducers', () => {
 				type: 'FETCH_DATA_START',
 			};
 
-			expect(reducers.isFetchingData(undefined, action)).toEqual(true);
+			expect(reducers.isFetchingData(undefined, action)).toBe(true);
 		});
 
 		it('should handle FETCH_DATA_START', () => {
@@ -110,13 +110,13 @@ describe('reducers', () => {
 				type: 'FETCH_DATA_END',
 			};
 
-			expect(reducers.isFetchingData(undefined, action)).toEqual(false);
+			expect(reducers.isFetchingData(undefined, action)).toBe(false);
 		});
 	});
 
 	describe('isSubmittingRating reducer', () => {
 		it('should return the initial state', () => {
-			expect(reducers.isSubmittingRating(undefined, {})).toEqual(null)
+			expect(reducers.isSubmittingRating(undefined, {})).toBe(null)
 		});
 
 		it('should handle SET_RATING_REQUEST_START', () => {
@@ -124,7 +124,7 @@ describe('reducers', () => {
 				type: 'SET_RATING_REQUEST_START',
 			};
 
-			expect(reducers.isSubmittingRating(undefined, action)).toEqual(true);
+			expect(reducers.isSubmittingRating(undefined, action)).toBe(true);
 		});
 
 		it('should handle SET_RATING_REQUEST_SUCCESS', () => {
@@ -132,7 +132,7 @@ describe('reducers', () => {
 				type: 'SET_RATING_REQUEST_SUCCESS',
 			};
 
-			expect(reducers.isSubmittingRating(undefined, action)).toEqual(false);
+			expect(reducers.isSubmittingRating(undefined, action)).toBe(false);
 		});
 
 		it('should handle SET_RATING_REQUEST_FAILURE', () => {
@@ -140,7 +140,7 @@ describe('reducers', () => {
 				type: 'SET_RATING_REQUEST_FAILURE',
 			};
 
-			expect(reducers.isSubmittingRating(undefined, action)).toEqual(false);
+			expect(reducers.isSubmittingRating(undefined, action)).toBe(false);
 		});
 	});
 });
