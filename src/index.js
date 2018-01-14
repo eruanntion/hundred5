@@ -21,7 +21,7 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(thunkMiddlew
 axios.defaults.baseURL = 'https://api-fknaanjgow.now.sh/feedback/';
 // You can provide Authorization token by supplying user in query string (for example user=John)
 // If not supplied, default, 'Ivan666', will be used
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + (getQueryVariable('user') || 'Ivan666');
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + (getQueryVariable('user') || 'IvanMilutinovic');
 
 ReactDOM.render(
 	<Provider store={store}>

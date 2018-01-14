@@ -10,7 +10,7 @@ import {openPopupAction, closePopupAction, setRatingAction, fetchDataAction} fro
 /**
  * App component. Main & only redux container component of this mini app.
  */
-class App extends Component {
+export class App extends Component {
 
 	componentDidMount() {
 		this.props.fetchDataAction();
@@ -56,7 +56,7 @@ class App extends Component {
 				</div>
 				<footer className="App__footer">
 					*You can provide Authorization token by supplying user in query string (for example user=John).
-					If not supplied, default, 'Ivan666', will be used</footer>
+					If not supplied, default, 'IvanMilutinovic', will be used</footer>
 			</div>
 		);
 	}

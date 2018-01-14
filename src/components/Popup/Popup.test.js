@@ -1,5 +1,5 @@
 import React from 'react'
-import {mount, render} from 'enzyme';
+import {mount} from 'enzyme';
 import Popup from './Popup';
 
 const setup = (props) => {
