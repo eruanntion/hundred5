@@ -4,6 +4,12 @@ import './Popup.css';
 import cross from './cross.svg';
 import _times from 'lodash/times';
 
+/**
+ * Popup component
+ * @param rating
+ * @param onStarClick
+ * @param onClose
+ */
 class Popup extends Component {
 	constructor(props) {
 		super(props);

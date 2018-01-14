@@ -3,6 +3,16 @@ import './Star.css';
 import starActive from './star-active.svg';
 import starDefault from './star-default.svg';
 
+/**
+ * Star component
+ * @param isActive
+ * @param number
+ * @param onMouseEnter
+ * @param onMouseLeave
+ * @param onClick
+ * @returns {*}
+ * @constructor
+ */
 const Star = ({isActive, number, onMouseEnter, onMouseLeave, onClick}) => (
 	<div className="Star">
 		<img className="Star__image"
