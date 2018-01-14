@@ -8,12 +8,13 @@ Requirements
 to use local component state as well. Please justify why you used Redux
 and component state. ✔️
 ```
-I used both redux & local state. Things like "rating" & "closed" are saved to redux store, because these are the longterm data
-that will likely be persisted. Also, redux provides nice separation of concerns compered to component state. I have one main container 
+I used both redux & local state. Things like "rating" & "closed" are saved to redux store, 
+because these are the longterm data that will likely be persisted. Also, redux provides nice 
+separation of concerns compered to component state. I have one main container 
 component, App.js that is connected to redux. 
 
-I also used component state on Popup component for "suggestedRating" because this is the short-term state that will change 
-rapidly - data that represent only part of an atomic change to the state.
+I also used component state on Popup component for "suggestedRating" because this is the short-term 
+state that will change rapidly - data that represent only part of an atomic change to the state.
 ```
 * Use redux-thunk, redux-saga or similar to handle asynchronous actions. ✔️
 ```
@@ -21,19 +22,19 @@ I used redux-thunk
 ```
 * Use git and commit your work often with meaningful messages. ✔️
 
-##Basic tasks
+## Basic tasks
 
-*. Create React components based on the provided design (design.png). Use
+* Create React components based on the provided design (design.png). Use
 the provided SVG icons. ✔️
-*. Implement rating: send selected rating to the API (described below) when
+* Implement rating: send selected rating to the API (described below) when
 the user clicks on one of the stars and hide the popup. ✔️
-*. Implement closing the popup: send the closed preference to the API and
+* Implement closing the popup: send the closed preference to the API and
 hide the popup. ✔️
-*. Show the popup only if no rating has been given and the popup hasn’t been
+* Show the popup only if no rating has been given and the popup hasn’t been
 closed. This means you need to fetch the feedback and closed preference
 before you can determine whether the popup should be visible. ✔️
 
-##Bonus tasks
+## Bonus tasks
 
 * Write some simple unit tests for your components using Jest and enzyme
 (if you wish to use it) ✔️
@@ -43,8 +44,8 @@ I wrote tests for all actions, reducers and components.
 * Describe how you would optimise the size of the resulting JS bundle as
 much as possible and what might be the drawbacks. ✔️
 ```
-For the most optimization techniques, wi would need to "npm eject". The main drowback is of course handling weback configuration
-by ourselves :). After that, we could utilize several techniques like:
+For the most optimization techniques, wi would need to "npm eject". The main drowback is of course handling 
+weback configuration by ourselves :). After that, we could utilize several techniques like:
 
 - CODE SPLITTING & CASHING
 Instead of ending up with one huge bundle.js, we can split our app and vendor code into separate files.
